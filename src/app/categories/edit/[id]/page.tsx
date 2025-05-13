@@ -5,7 +5,10 @@ import { useRouter } from 'next/navigation';
 import { UpdateCategoryDto } from '@/types/category';
 import { useParams } from 'next/navigation'
 
-export default function CategoryEditForm({ categoryId }: { categoryId: string }) {
+
+
+
+ const CategoryEditForm=()=> {
   const params = useParams()
 
 
@@ -24,7 +27,6 @@ export default function CategoryEditForm({ categoryId }: { categoryId: string })
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
   const [translations, setTranslations] = useState<{language: string, name: string}[]>([]);
-console.log("c",categoryId)
   useEffect(() => {
     const fetchCategory = async () => {
       try {
@@ -275,3 +277,5 @@ console.log("c",categoryId)
     </div>
   );
 }
+
+export default CategoryEditForm

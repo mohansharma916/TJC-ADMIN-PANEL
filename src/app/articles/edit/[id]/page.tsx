@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/navigation';
 import { UpdateArticleDto } from '@/types/article';
 
-export default function ArticleEditForm({ articleId }: { articleId: string }) {
+export default function ArticleEditForm({ articleId }: any) {
   const router = useRouter();
   const { register, handleSubmit, control, reset, formState: { errors } } = useForm<UpdateArticleDto>();
   const [isLoading, setIsLoading] = useState(true);
