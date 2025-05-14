@@ -22,7 +22,7 @@ export default  function ArticlesListPage() {
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const response = await fetch('http://localhost:5000/articles');
+        const response = await fetch('https://tjc-backend.onrender.com/articles');
         if (!response.ok) throw new Error('Failed to fetch Articles');
         const data = await response.json();
         setArticles(data);

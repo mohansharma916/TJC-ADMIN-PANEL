@@ -31,7 +31,7 @@ import { useParams } from 'next/navigation'
     const fetchCategory = async () => {
       try {
      
-        const response = await fetch(`http://localhost:5000/categories/${params.id}`);
+        const response = await fetch(`https://tjc-backend.onrender.com/categories/${params.id}`);
         if (!response.ok) throw new Error('Failed to fetch category');
         const data = await response.json();
         reset(data);
@@ -49,7 +49,7 @@ import { useParams } from 'next/navigation'
   const onSubmit = async (data: UpdateCategoryDto) => {
     setIsSubmitting(true);
     try {
-      const response = await fetch(`http://localhost:5000/categories/${params.id}`, {
+      const response = await fetch(`https://tjc-backend.onrender.com/categories/${params.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
